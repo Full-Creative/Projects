@@ -1,0 +1,23 @@
+function onChangeSubmitCallWebServiceAJAX() {
+	var text = document.getElementById("data").value;
+	var type = document.getElementById("types").value;
+	xhr = new XMLHttpRequest();
+	xhr.open('POST', 'time');
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.onload = function() {
+		if (xhr.status === 200 && xhr.readyState == 4) {
+			console.log(xhr.responseText);
+			console.log(xhr.responseText.type);
+			console.log(JSON.parse(this.responseText).type);
+				document.getElementById('readTime').innerHTML='The read time of ' + JSON.parse(xhr.responseText.type) + ' is ' + JSON.parse(xhr.responseText.minutes) + ' minutes';
+
+		}
+		else if (xhr.status !== 200) {
+			alert('Request failed.  Returned status of ' + xhr.status);
+		}
+	};
+	xhr.send(JSON.stringify({
+		text: 'welcome to my app',
+		type: 'average'
+	}));
+}

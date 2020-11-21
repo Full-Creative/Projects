@@ -1,0 +1,39 @@
+package com.readtime;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+
+@WebServlet(name = "TimeResult", urlPatterns = { "/result" })
+public class TimeResult extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		StringBuilder buffer = new StringBuilder();
+		int count;
+		double minutes;
+		BufferedReader reader = req.getReader();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			buffer.append(line);
+		}
+		Data obj = new Gson().fromJson(buffer.toString(), Data.class);
+		
+		ReadTimeFactory readTime = new ReadTimeFactory();
+		count = new WordCounter().countWords(obj.getText());
+		minutes = readTime.getReadTime(obj.getType()).calculateTime(count);
+
+		System.out.println("Number of words in text file " + count);
+		System.out.println("Read time of" + obj.getType() + " person " + minutes + " Minutes");
+		obj.setMinutes(minutes);
+		System.out.println(new Gson().toJson(obj));
+		resp.setContentType("application/json");
+		resp.setCharacterEncoding("UTF-8");
+		resp.getWriter().write(new Gson().toJson(obj));
+	}
+}

@@ -1,1 +1,76 @@
-2020-11-21 16:28:34,252 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-12 12:24:48,476 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-12 12:25:57,405 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.loosebazooka.test:simple-appengine-app:1.0-SNAPSHOT @ C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\pom.xml.
+2020-11-12 12:26:05,669 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:26:05,670 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 12:26:08,760 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:26:08,761 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 12:26:08,766 [Worker-6: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.loosebazooka.test:simple-appengine-app:1.0-SNAPSHOT @ C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\pom.xml.
+2020-11-12 12:26:12,117 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:26:12,117 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 12:26:12,119 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:26:12,120 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 12:40:32,113 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-12 12:42:41,522 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-12 12:44:26,379 [Worker-5: Resolving libraries for Dynamic Web Module 3.1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/servlet/jsp/javax.servlet.jsp-api/2.3.0/javax.servlet.jsp-api-2.3.0.jar
+2020-11-12 12:44:26,837 [Worker-5: Resolving libraries for Dynamic Web Module 3.1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/servlet/jsp/javax.servlet.jsp-api/2.3.0/javax.servlet.jsp-api-2.3.0.jar
+2020-11-12 12:44:28,122 [Worker-5: Resolving libraries for Dynamic Web Module 3.1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/servlet/jsp/javax.servlet.jsp-api/2.3.0/javax.servlet.jsp-api-2.3.0-sources.jar
+2020-11-12 12:44:29,263 [Worker-5: Resolving libraries for Dynamic Web Module 3.1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/servlet/jsp/javax.servlet.jsp-api/2.3.0/javax.servlet.jsp-api-2.3.0-sources.jar
+2020-11-12 12:44:34,513 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:44:34,516 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 12:44:34,520 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 12:44:34,520 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 13:11:02,425 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-12 13:13:46,790 [Worker-14: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:13:46,790 [Worker-14: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 13:13:46,794 [Worker-14: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:13:46,794 [Worker-14: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 13:14:58,586 [Worker-16: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:14:58,587 [Worker-16: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 13:14:58,589 [Worker-16: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:14:58,590 [Worker-16: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 13:17:36,338 [Worker-19: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:17:36,338 [Worker-19: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-12 13:17:36,341 [Worker-19: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-12 13:17:36,342 [Worker-19: Rebuilding] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-12 13:25:35,555 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2020-11-12 13:26:55,675 [Worker-19: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service
+2020-11-12 13:26:55,702 [Worker-19: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B 
+2020-11-12 13:27:28,167 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-11-12 13:27:48,956 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-11-12 13:28:09,030 [Worker-13: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service
+2020-11-12 13:28:09,030 [Worker-13: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2020-11-12 13:28:30,413 [main] INFO  o.e.m2e.actions.ExecutePomAction - Using existing launch configuration
+2020-11-12 13:28:30,689 [Worker-19: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service
+2020-11-12 13:28:30,689 [Worker-19: Launching single-service] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package
+2020-11-12 13:28:40,886 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2020-11-12 13:28:51,644 [Worker-21: Launching single-service (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service
+2020-11-12 13:28:51,644 [Worker-21: Launching single-service (1)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B package appengine:run
+2020-11-12 19:01:03,928 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-13 11:12:24,225 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-16 10:22:28,108 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-16 10:22:51,723 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:22:51,724 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-16 10:22:51,731 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-16 10:22:51,731 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-16 10:22:51,823 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of single-service
+2020-11-16 10:22:51,889 [Worker-12: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for single-service
+2020-11-16 10:22:52,741 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-17 10:35:04,695 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-18 10:04:30,103 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-18 10:04:51,336 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-18 10:04:51,336 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-18 10:04:51,351 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-18 10:04:51,351 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-18 10:04:51,461 [Worker-3: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of single-service
+2020-11-18 10:04:51,461 [Worker-3: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for single-service
+2020-11-18 10:04:52,000 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-18 11:54:47,706 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-18 11:54:57,438 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-18 11:54:57,438 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\main\resources
+2020-11-18 11:54:57,453 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-18 11:54:57,453 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User.DESKTOP-SAM078B\Downloads\simple-appengine-app\single-service\src\test\resources
+2020-11-19 09:58:54,225 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-20 11:04:24,140 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-20 17:50:17,664 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-21 12:50:53,945 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-21 16:31:08,243 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

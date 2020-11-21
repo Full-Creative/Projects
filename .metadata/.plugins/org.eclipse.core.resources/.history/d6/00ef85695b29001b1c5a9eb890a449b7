@@ -1,0 +1,25 @@
+package com.readtime;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.google.gson.Gson;
+
+public class Serializer {
+	public UserData JsonToJavaObject(HttpServletRequest req) throws IOException {
+		StringBuilder buffer = new StringBuilder();
+		BufferedReader reader = req.getReader();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			buffer.append(line);
+		}
+		UserData data = new Gson().fromJson(buffer.toString(), UserData.class);
+		return data;
+	}
+	public String JavaObjectToJson(UserData data)
+	{
+		return new Gson().toJson(data);
+	}
+}

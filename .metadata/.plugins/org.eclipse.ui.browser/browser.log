@@ -1,0 +1,9 @@
+
+Nov 18, 2020 12:06:00.740 NEW SESSION
+Nov 18, 2020 12:06:00.741 [1118/120600.734:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+Nov 18, 2020 12:44:42.707 [8976:6164:1118/124442.706:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Nov 18, 2020 12:45:07.877 [8976:6164:1118/124507.877:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Nov 18, 2020 14:13:42.675 [8976:6164:1118/141342.674:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Nov 18, 2020 14:14:08.290 [8976:6164:1118/141408.289:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+Nov 18, 2020 18:22:18.257 [8976:6164:1118/182218.256:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+Nov 18, 2020 18:23:12.747 [8976:6164:1118/182312.746:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -7
