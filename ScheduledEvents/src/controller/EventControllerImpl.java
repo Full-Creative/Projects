@@ -7,8 +7,6 @@ import generator.DataGenerator;
 import generator.SortHelper;
 import model.Event;
 import model.ParticipantDetails;
-
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class EventControllerImpl implements EventController {
@@ -54,10 +52,8 @@ public class EventControllerImpl implements EventController {
 		Map<Integer, Event> events = eventDB.getEvents();
 
 		Map<Integer, Event> eventsList = new HashMap<Integer, Event>();
-		SimpleDateFormat sdf = new SimpleDateFormat("HH");
 		for (Entry<Integer, Event> entry : events.entrySet()) {
-			long resulthours = Long.valueOf(sdf.format(new Date(entry.getValue().getEventTime())));
-			if (resulthours >= start && resulthours <= end)
+			if (entry.getValue().getEventTime() >= start && entry.getValue().getEventTime() <= end)
 				eventsList.put(entry.getKey(), entry.getValue());
 		}
 		return eventsList;
@@ -66,12 +62,12 @@ public class EventControllerImpl implements EventController {
 	@Override
 	public void addParticipants(int id, int number) {
 		Map<Integer, Event> events = eventDB.getEvents();
-		Set<ParticipantDetails> exisitingParticipants= events.get(id).getParticipants();
-		int existing= exisitingParticipants==null? 0: exisitingParticipants.size();
-		Set<ParticipantDetails> participants = new DataGenerator().generateParticipants(existing,number);
-		if(exisitingParticipants!=null)
-		participants.addAll(exisitingParticipants);
-		
+		Set<ParticipantDetails> exisitingParticipants = events.get(id).getParticipants();
+		int existing = exisitingParticipants == null ? 0 : exisitingParticipants.size();
+		Set<ParticipantDetails> participants = new DataGenerator().generateParticipants(existing, number);
+		if (exisitingParticipants != null)
+			participants.addAll(exisitingParticipants);
+
 		events.get(id).setParticipants(participants);
 		eventDB.setEvents(events);
 	}
@@ -87,11 +83,13 @@ public class EventControllerImpl implements EventController {
 		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventDurationHelper(events);
 		return sortedEvents;
 	}
+
 	public HashMap<Integer, Event> sortByEventCreated() {
 		Map<Integer, Event> events = eventDB.getEvents();
 		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventCreatedHelper(events);
 		return sortedEvents;
 	}
+
 	public HashMap<Integer, Event> sortByEventTime() {
 		Map<Integer, Event> events = eventDB.getEvents();
 		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventTimeHelper(events);

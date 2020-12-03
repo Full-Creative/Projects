@@ -14,7 +14,6 @@ public class ScheduleEvent {
 		eventController.addParticipants(2, 4);
 		eventController.addParticipants(3, 1);
 
-		eventController.addParticipants(3, 5);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 		System.out.println("The list of events are");
@@ -25,13 +24,14 @@ public class ScheduleEvent {
 					+ entry.getValue().getEventDuration() / 3600000 + "hrs" + "  Event Time: "
 					+ (sdf.format(new Date(entry.getValue().getEventTime()))) + "  Event Created Time:  "
 					+ (sdf.format(new Date(entry.getValue().getEventCreatedTime()))) + " Number of participants: "
-					+ participants 
-					+" Event name " + entry.getValue().getEventTitle()
-					+ "\n");
+					+ participants + " Event name " + entry.getValue().getEventTitle() + "\n");
 		}
-
+		System.out.print("\nRetrieve by time range between "+ sdf.format(1414330846000L)+ " and " +sdf.format(1414590044999L));
+		for (Entry<Integer, Event> entry : eventController.retrieveByTimeRange(1414330846000L,1414590044999L).entrySet()) 
+			System.out.print("\nEvent ID = " + entry.getKey() + ", "+ (sdf.format(new Date(entry.getValue().getEventTime()))));
+				
 		// Sorted based on participants count
-		System.out.print("\nSort based on participant count");
+		System.out.print("\n\nSort based on participant count");
 		for (Entry<Integer, Event> entry : eventController.sortByParticipantCount().entrySet()) {
 			System.out.print("\nEvent ID = " + entry.getKey() + ",");
 			if (entry.getValue().getParticipants() != null)
@@ -56,22 +56,16 @@ public class ScheduleEvent {
 					+ (sdf.format(new Date(entry.getValue().getEventTime()))));
 		}
 
-		/*String myDate = "2014/10/29 19:10:45";
-		sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date;
-		long millis = 0;
-		try {
-			date = sdf.parse(myDate);
-			millis = date.getTime();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		long res = (1414590045000L) - (1414676445000L);
-		System.out.println("\n" + res);
-		// System.out.println("30/10 "+ "1414676445000");
-		// System.out.println(3600000*3);
-*/
+		/*
+		 * String myDate = "2014/10/29 19:10:45"; sdf = new
+		 * SimpleDateFormat("yyyy/MM/dd HH:mm:ss"); Date date; long millis = 0; try {
+		 * date = sdf.parse(myDate); millis = date.getTime(); } catch (ParseException e)
+		 * { // TODO Auto-generated catch block e.printStackTrace(); } long res =
+		 * (1414590045000L) - (1414676445000L); System.out.println("\n" + res); //
+		 * System.out.println("30/10 "+ "1414676445000"); //
+		 * System.out.println(3600000*3);
+		 */
+		
 	}
 
 }
