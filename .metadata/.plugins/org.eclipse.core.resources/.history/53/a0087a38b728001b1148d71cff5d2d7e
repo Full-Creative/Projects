@@ -1,6 +1,0 @@
-package com.readtime;
-
-public class Data {
-	public String text;
-	public String type;
-}
