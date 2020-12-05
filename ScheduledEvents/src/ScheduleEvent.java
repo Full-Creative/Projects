@@ -1,60 +1,29 @@
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.Map.Entry;
-import controller.EventControllerImpl;
-import model.Event;
-import model.ParticipantDetails;
+
+import controller.EventServiceImp;
+import generator.DataGenerator;
 
 public class ScheduleEvent {
 	public static void main(String[] args) {
-		EventControllerImpl eventController = new EventControllerImpl();
+		EventServiceImp eventService = new EventServiceImp();
+		DataGenerator generator = new DataGenerator();
 
-		eventController.addEvents(4);
-		eventController.addParticipants(1, 3);
-		eventController.addParticipants(2, 4);
-		eventController.addParticipants(3, 1);
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-
-		System.out.println("The list of events are");
-		for (Entry<Integer, Event> entry : eventController.eventDB.getEvents().entrySet()) {
-			int participants = (entry.getValue().getParticipants() == null) ? 0
-					: entry.getValue().getParticipants().size();
-			System.out.print("Event ID = " + entry.getKey() + ", " + " Event Duration "
-					+ entry.getValue().getEventDuration() / 3600000 + "hrs" + "  Event Time: "
-					+ (sdf.format(new Date(entry.getValue().getEventTime()))) + "  Event Created Time:  "
-					+ (sdf.format(new Date(entry.getValue().getEventCreatedTime()))) + " Number of participants: "
-					+ participants + " Event name " + entry.getValue().getEventTitle() + "\n");
-		}
-		System.out.print("\nRetrieve by time range between "+ sdf.format(1414330846000L)+ " and " +sdf.format(1414590044999L));
-		for (Entry<Integer, Event> entry : eventController.retrieveByTimeRange(1414330846000L,1414590044999L).entrySet()) 
-			System.out.print("\nEvent ID = " + entry.getKey() + ", "+ (sdf.format(new Date(entry.getValue().getEventTime()))));
-				
-		// Sorted based on participants count
-		System.out.print("\n\nSort based on participant count");
-		for (Entry<Integer, Event> entry : eventController.sortByParticipantCount().entrySet()) {
-			System.out.print("\nEvent ID = " + entry.getKey() + ",");
-			if (entry.getValue().getParticipants() != null)
-				for (ParticipantDetails p : entry.getValue().getParticipants()) {
-					System.out.print(p.getEmail() + " ");
-				}
-		}
-		System.out.print("\n\nSort based on Event Duration");
-		for (Entry<Integer, Event> entry : eventController.sortByEventDuration().entrySet()) {
-			System.out.print("\nEvent ID = " + entry.getKey() + ", Event Duration "
-					+ entry.getValue().getEventDuration() / 3600000 + "hrs");
-		}
-		System.out.print("\n\nSort based on  Event Created Time");
-		for (Entry<Integer, Event> entry : eventController.sortByEventCreated().entrySet()) {
-			System.out.print("\nEvent ID = " + entry.getKey() + ",Event Created Time "
-					+ (sdf.format(new Date(entry.getValue().getEventCreatedTime()))));
+		try {
+			eventService.addEvents(generator.generateEvents(4));
+			eventService.addParticipants(1, generator.generateParticipants(3));
+			eventService.addParticipants(2, generator.generateParticipants(4));
+			eventService.addParticipants(3, generator.generateParticipants(1));
+			
+		} catch (IllegalArgumentException e) {
+			System.out.println(e.getMessage());
 		}
 
-		System.out.print("\n\nSort based on  Event Time");
-		for (Entry<Integer, Event> entry : eventController.sortByEventTime().entrySet()) {
-			System.out.print("\nEvent ID = " + entry.getKey() + ", Created Time  "
-					+ (sdf.format(new Date(entry.getValue().getEventTime()))));
-		}
+		PrintEvent show = new PrintEvent(eventService);
+		show.listAll();
+		show.displayByTimeRange();
+		show.displaySortBasedOnParticipantCount();
+		show.displaySortBasedOnDuration();
+		show.displaySortBasedOnCreatedTime();
+		show.displaySortBasedOnTime();
 
 		/*
 		 * String myDate = "2014/10/29 19:10:45"; sdf = new
@@ -65,7 +34,7 @@ public class ScheduleEvent {
 		 * System.out.println("30/10 "+ "1414676445000"); //
 		 * System.out.println(3600000*3);
 		 */
-		
+
 	}
 
 }

@@ -2,42 +2,63 @@ package controller;
 
 import java.util.Map.Entry;
 
-import data.EventsDB;
+import datastore.EventsDB;
 import generator.DataGenerator;
-import generator.SortHelper;
 import model.Event;
 import model.ParticipantDetails;
 import java.util.*;
 
-public class EventControllerImpl implements EventController {
+public class EventServiceImp extends SortHelper implements EventService {
 	public EventsDB eventDB;
 
-	public EventControllerImpl() {
+	public EventServiceImp() {
 		eventDB = new EventsDB();
 	}
 
 	@Override
-	public void addEvents(int numEvents) {
-		List<Event> eventDetails = new DataGenerator().generateEvents(numEvents);
-		Map<Integer, Event> events = eventDB.getEvents();
-		for (int i = 0; i < numEvents; i++) {
-			events.put(events.size() + 1, eventDetails.get(i));
+	public Map<Integer, Event> addEvents(List<Event> eventDetails) {
+		if (eventDetails == null || eventDetails.isEmpty())
+			throw new IllegalArgumentException("Event Details not available");
+
+		Map<Integer, Event> events = new HashMap<Integer, Event>();
+		// Map<Integer, Event> events = eventDB.getEvents();
+		for (int i = 0; i < eventDetails.size(); i++) {
+			events.put(eventDB.getEvents().size() + 1, eventDetails.get(i));
 			eventDB.setEvents(events);
 		}
+
+		return eventDB.getEvents();
 	}
 
 	@Override
-	public void modifyEvent(int id) {
+	public Event modifyEvent(int id) {
 		Map<Integer, Event> events = eventDB.getEvents();
+		if (events.get(id) == null || id<0)
+			throw new IllegalArgumentException("Unavailable id");
 		events.replace(id, new DataGenerator().updateEvent(events.get(id)));
 		eventDB.setEvents(events);
+		
+		return eventDB.getEvents().get(id);
 	}
 
 	@Override
 	public void deleteEvent(int id) {
 		Map<Integer, Event> events = eventDB.getEvents();
+		if (events.get(id) == null)
+			throw new IllegalArgumentException("Event Id not available");
 		events.remove(id);
 		eventDB.setEvents(events);
+	}
+
+	@Override
+	public void addParticipants(int id, Set<ParticipantDetails> participants) {
+		if (participants == null || participants.isEmpty())
+			throw new IllegalArgumentException("Participant Details not available");
+		if (eventDB.getEvents().get(id) == null || id < 0)
+			throw new IllegalArgumentException("No such event");
+
+		eventDB.getEvents().get(id).setParticipants(participants);
+//return event.get(id)
 	}
 
 	@Override
@@ -59,40 +80,27 @@ public class EventControllerImpl implements EventController {
 		return eventsList;
 	}
 
-	@Override
-	public void addParticipants(int id, int number) {
-		Map<Integer, Event> events = eventDB.getEvents();
-		Set<ParticipantDetails> exisitingParticipants = events.get(id).getParticipants();
-		int existing = exisitingParticipants == null ? 0 : exisitingParticipants.size();
-		Set<ParticipantDetails> participants = new DataGenerator().generateParticipants(existing, number);
-		if (exisitingParticipants != null)
-			participants.addAll(exisitingParticipants);
-
-		events.get(id).setParticipants(participants);
-		eventDB.setEvents(events);
-	}
-
 	public HashMap<Integer, Event> sortByParticipantCount() {
 		Map<Integer, Event> events = eventDB.getEvents();
-		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByParticipantCountHelper(events);
+		HashMap<Integer, Event> sortedEvents = sortByParticipantCountHelper(events);
 		return sortedEvents;
 	}
 
 	public HashMap<Integer, Event> sortByEventDuration() {
 		Map<Integer, Event> events = eventDB.getEvents();
-		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventDurationHelper(events);
+		HashMap<Integer, Event> sortedEvents = sortByEventDurationHelper(events);
 		return sortedEvents;
 	}
 
 	public HashMap<Integer, Event> sortByEventCreated() {
 		Map<Integer, Event> events = eventDB.getEvents();
-		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventCreatedHelper(events);
+		HashMap<Integer, Event> sortedEvents = sortByEventCreatedHelper(events);
 		return sortedEvents;
 	}
 
 	public HashMap<Integer, Event> sortByEventTime() {
 		Map<Integer, Event> events = eventDB.getEvents();
-		HashMap<Integer, Event> sortedEvents = new SortHelper().sortByEventTimeHelper(events);
+		HashMap<Integer, Event> sortedEvents = sortByEventTimeHelper(events);
 		return sortedEvents;
 	}
 }

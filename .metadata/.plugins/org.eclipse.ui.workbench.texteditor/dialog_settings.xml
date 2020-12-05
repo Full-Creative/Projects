@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="e"/>
+		<item key="selection" value="eventService"/>
 		<list key="findhistory">
+			<item value="eventController"/>
 			<item value="e"/>
 			<item value="Blog"/>
 			<item value=" equals("/>
@@ -22,9 +23,9 @@
 			<item value="linkedHashmap"/>
 			<item value="linked"/>
 			<item value="prev"/>
-			<item value="next"/>
 		</list>
 		<list key="replacehistory">
+			<item value="eventService"/>
 			<item value="eventController"/>
 			<item value="ParticipantDetials"/>
 		</list>

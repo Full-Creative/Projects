@@ -1,4 +1,4 @@
-package data;
+package datastore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,8 @@ public class EventsDB {
 	}
 
 	public void setEvents(Map<Integer, Event> events) {
-		this.events = events;
+		//this.events = events;
+		this.events.putAll(events);
 	}
 
 }

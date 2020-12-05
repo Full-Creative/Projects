@@ -9,4 +9,7 @@ public class A {
 	public String getPrivatData() {
 		return privateName;
 	}
+	protected void protectedMethod() {
+		System.out.println("protected method");
+	}
 }

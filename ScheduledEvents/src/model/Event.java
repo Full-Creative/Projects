@@ -39,7 +39,10 @@ public class Event {
 	}
 
 	public void setParticipants(Set<ParticipantDetails> participants) {
-		this.participants = participants;
+		if(this.participants!=null)
+		this.participants.addAll(participants);
+		else
+			this.participants=participants;
 	}
 
 	public String getEventTitle() {
@@ -50,6 +53,6 @@ public class Event {
 		this.eventTitle = eventTitle;
 	}
 
-
+	
 
 }

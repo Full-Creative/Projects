@@ -9,6 +9,6 @@ public class DextendsA extends A {
 		System.out.println("default not accessable");
 		System.out.println("private not accessable");
 	
-		
+		protectedMethod();
 	}
 }

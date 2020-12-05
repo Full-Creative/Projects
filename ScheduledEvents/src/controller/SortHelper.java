@@ -1,4 +1,4 @@
-package generator;
+package controller;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,7 +11,7 @@ import java.util.Map;
 import model.Event;
 
 public class SortHelper {
-	public HashMap<Integer, Event> sortByParticipantCountHelper(Map<Integer, Event> events) {
+	protected HashMap<Integer, Event> sortByParticipantCountHelper(Map<Integer, Event> events) {
 		List<Map.Entry<Integer, Event>> list = new LinkedList<Map.Entry<Integer, Event>>(events.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<Integer, Event>>() {
 			public int compare(Map.Entry<Integer, Event> o1, Map.Entry<Integer, Event> o2) {
@@ -29,7 +29,7 @@ public class SortHelper {
 
 		return temp;
 	}
-	public HashMap<Integer, Event> sortByEventDurationHelper(Map<Integer, Event> events) {
+	protected HashMap<Integer, Event> sortByEventDurationHelper(Map<Integer, Event> events) {
 		List<Map.Entry<Integer, Event>> list = new LinkedList<Map.Entry<Integer, Event>>(events.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<Integer, Event>>() {
 			public int compare(Map.Entry<Integer, Event> o1, Map.Entry<Integer, Event> o2) {
@@ -48,7 +48,7 @@ public class SortHelper {
 		}
 		return temp;
 	}
-	public HashMap<Integer, Event> sortByEventCreatedHelper(Map<Integer, Event> events) {
+	protected HashMap<Integer, Event> sortByEventCreatedHelper(Map<Integer, Event> events) {
 		List<Map.Entry<Integer, Event>> list = new LinkedList<Map.Entry<Integer, Event>>(events.entrySet());
 		Collections.sort(list, new Comparator<Map.Entry<Integer, Event>>() {
 			public int compare(Map.Entry<Integer, Event> o1, Map.Entry<Integer, Event> o2) {
