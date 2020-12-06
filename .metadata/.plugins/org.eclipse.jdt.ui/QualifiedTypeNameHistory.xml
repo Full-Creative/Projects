@@ -23,7 +23,6 @@
     <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="data.Events"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="model.ParticipantDetails"/>
     <fullyQualifiedTypeName name="junit.framework.Assert"/>
     <fullyQualifiedTypeName name="org.junit.Assert"/>
@@ -34,8 +33,12 @@
     <fullyQualifiedTypeName name="controller.EventControllerImpl"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
-    <fullyQualifiedTypeName name="controller.EventServiceImp"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="generator.DataGenerator"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.debug.Assertions"/>
+    <fullyQualifiedTypeName name="controller.EventServiceImp"/>
+    <fullyQualifiedTypeName name="datastore.DataBaseException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="datastore.EventsDB"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>

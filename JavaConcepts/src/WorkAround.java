@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-public class WorkAround {
+public class WorkAround extends abstractClass {
 public static void main(String[] args) {
 	List<Integer> a=new ArrayList<Integer>();
 	a.add(1);
@@ -57,5 +57,11 @@ public static void main(String[] args) {
          System.out.println("Key = " + entry.getKey() + 
                           ", Value = " + entry.getValue()); 
 	*/
+}
+
+@Override
+public void display() {
+	// TODO Auto-generated method stub
+	
 }
 }

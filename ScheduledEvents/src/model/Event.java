@@ -3,7 +3,7 @@ package model;
 import java.util.*;
 
 public class Event {
-	// int eventID;
+	private int eventID;
 	private String eventTitle;
 	private long eventTime;
 	private long eventCreatedTime;
@@ -51,6 +51,14 @@ public class Event {
 
 	public void setEventTitle(String eventTitle) {
 		this.eventTitle = eventTitle;
+	}
+
+	public int getEventID() {
+		return eventID;
+	}
+
+	public void setEventID(int eventID) {
+		this.eventID = eventID;
 	}
 
 	

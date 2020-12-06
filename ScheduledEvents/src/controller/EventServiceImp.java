@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Map.Entry;
 
+import datastore.DataBaseException;
 import datastore.EventsDB;
 import generator.DataGenerator;
 import model.Event;
@@ -16,38 +17,43 @@ public class EventServiceImp extends SortHelper implements EventService {
 	}
 
 	@Override
-	public Map<Integer, Event> addEvents(List<Event> eventDetails) {
+	public List<Event> addEvents(List<Event> eventDetails) {
 		if (eventDetails == null || eventDetails.isEmpty())
 			throw new IllegalArgumentException("Event Details not available");
-
-		Map<Integer, Event> events = new HashMap<Integer, Event>();
-		// Map<Integer, Event> events = eventDB.getEvents();
-		for (int i = 0; i < eventDetails.size(); i++) {
-			events.put(eventDB.getEvents().size() + 1, eventDetails.get(i));
-			eventDB.setEvents(events);
+		boolean inserted = false;
+		try {
+			inserted = eventDB.setEvents(eventDetails);
+			if (!inserted)
+				throw new DataBaseException("Not inserted");
+		} catch (DataBaseException e) {
+			System.out.println(e.getMessage());
 		}
-
-		return eventDB.getEvents();
+		return eventDetails;
 	}
 
 	@Override
-	public Event modifyEvent(int id) {
-		Map<Integer, Event> events = eventDB.getEvents();
-		if (events.get(id) == null || id<0)
+	public Event modifyEvent(Event event) {
+		if (retrieveById(event.getEventID()) == null || event.getEventID() < 0)
 			throw new IllegalArgumentException("Unavailable id");
-		events.replace(id, new DataGenerator().updateEvent(events.get(id)));
-		eventDB.setEvents(events);
-		
-		return eventDB.getEvents().get(id);
+		boolean modified = false;
+		try {
+			modified = eventDB.setEvent(event);
+			if (modified)
+				return event;
+			else
+				throw new DataBaseException("Not modified");
+		} catch (DataBaseException e) {
+			System.out.println(e.getMessage());
+		}
+		return retrieveById(event.getEventID());
 	}
 
 	@Override
-	public void deleteEvent(int id) {
-		Map<Integer, Event> events = eventDB.getEvents();
-		if (events.get(id) == null)
-			throw new IllegalArgumentException("Event Id not available");
-		events.remove(id);
-		eventDB.setEvents(events);
+	public void deleteEvents(List<Integer> id) {
+		for (Integer i : id)
+			if (retrieveById(i) == null)
+				throw new IllegalArgumentException("Event Id not available");
+		eventDB.removeEvents(id);
 	}
 
 	@Override
@@ -58,12 +64,14 @@ public class EventServiceImp extends SortHelper implements EventService {
 			throw new IllegalArgumentException("No such event");
 
 		eventDB.getEvents().get(id).setParticipants(participants);
-//return event.get(id)
+		//return event.get(id)
 	}
 
 	@Override
 	public Event retrieveById(int id) {
 		Map<Integer, Event> events = eventDB.getEvents();
+		if (events.get(id) == null)
+			throw new IllegalArgumentException("No such event");
 		return events.get(id);
 
 	}

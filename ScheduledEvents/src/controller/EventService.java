@@ -6,13 +6,13 @@ import model.Event;
 import model.ParticipantDetails;
 
 public interface EventService {
-	public Map<Integer,Event> addEvents(List<Event> eventDetails);
+	public List<Event> addEvents(List<Event> eventDetails);
 
 	public void addParticipants(int id,Set<ParticipantDetails> participants);
 
-	public Event modifyEvent(int id);
+	public Event modifyEvent(Event event);
 
-	public void deleteEvent(int id);
+	public void deleteEvents(List<Integer> id);
 
 	public Event retrieveById(int id);
 

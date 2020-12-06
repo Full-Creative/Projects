@@ -1,24 +1,38 @@
+import java.util.Arrays;
 
 import controller.EventServiceImp;
+import datastore.DataBaseException;
 import generator.DataGenerator;
 
 public class ScheduleEvent {
 	public static void main(String[] args) {
 		EventServiceImp eventService = new EventServiceImp();
 		DataGenerator generator = new DataGenerator();
-
+		PrintEvent show = new PrintEvent(eventService);
+		
 		try {
 			eventService.addEvents(generator.generateEvents(4));
 			eventService.addParticipants(1, generator.generateParticipants(3));
 			eventService.addParticipants(2, generator.generateParticipants(4));
 			eventService.addParticipants(3, generator.generateParticipants(1));
-			
+			eventService.addEvents(generator.generateEvents(1));
+			eventService.addParticipants(4, generator.generateParticipants(1));
+			show.listAll();
+	
+			eventService.deleteEvents(Arrays.asList(1));
+			System.out.println("after deleting event id 1");
+			show.listAll();
+					
+				
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}
+		
 
-		PrintEvent show = new PrintEvent(eventService);
-		show.listAll();
+		
+	//	eventService.modifyEvent(generator.generateEvent());		
+		
+	
 		show.displayByTimeRange();
 		show.displaySortBasedOnParticipantCount();
 		show.displaySortBasedOnDuration();

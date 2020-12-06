@@ -6,12 +6,15 @@ import model.Event;
 import model.ParticipantDetails;
 
 public class DataGenerator {
-static int email;
+	static int email;
+	static int eventID;
+
 	public List<Event> generateEvents(int numEvents) {
 		List<Event> events = new ArrayList<Event>();
 		long hour = 0;
 		for (int i = 1; i <= numEvents; i++) {
 			Event eventDetails = new Event();
+			eventDetails.setEventID(eventID++);
 			eventDetails.setEventTitle("Event" + i);
 			eventDetails.setEventCreatedTime(1414590045000L);
 			eventDetails.setEventDuration(3600000 * (numEvents - i + 1));
@@ -24,13 +27,17 @@ static int email;
 		return events;
 	}
 
-	public Event updateEvent(Event event) {
-		event.setEventDuration(129);
+	public Event generateEvent() {
+		Event event=new Event();
+		event.setEventID(2);
 		event.setEventTime(System.currentTimeMillis());
+		event.setEventTitle("Updated Event");
+		event.setEventDuration(3600000 * 8);
+
 		return event;
 	}
 
-	public Set<ParticipantDetails> generateParticipants( int number) {
+	public Set<ParticipantDetails> generateParticipants(int number) {
 		Set<ParticipantDetails> participants = new HashSet<ParticipantDetails>();
 		for (int j = 0; j < number; j++) {
 			ParticipantDetails p = new ParticipantDetails();
