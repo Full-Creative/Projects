@@ -8,4 +8,12 @@
     <list key="app-engine-server-modules-list" value0="org.eclipse.jst.jee.server:ReadTimeCalculator"/>
     <list key="modules" value0="ReadTimeCalculator::org.eclipse.jst.jee.server:ReadTimeCalculator::jst.web::3.1"/>
   </server>
+  <server auto-publish-setting="2" auto-publish-time="0" hostname="localhost" id="App Engine Standard at localhost (3)" name="App Engine Standard at localhost (3)" runtime-id="App Engine Standard Runtime" server-type="com.google.cloud.tools.eclipse.appengine.standard.server" server-type-id="com.google.cloud.tools.eclipse.appengine.standard.server" start-timeout="240" stop-timeout="240" timestamp="0">
+    <list key="app-engine-server-modules-list" value0="org.eclipse.jst.jee.server:EventScheduler"/>
+    <list key="modules" value0="EventScheduler::org.eclipse.jst.jee.server:EventScheduler::jst.web::3.1"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="0" hostname="localhost" id="App Engine Standard at localhost (4)" name="App Engine Standard at localhost (4)" runtime-id="App Engine Standard Runtime" server-type="com.google.cloud.tools.eclipse.appengine.standard.server" server-type-id="com.google.cloud.tools.eclipse.appengine.standard.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="app-engine-server-modules-list" value0="org.eclipse.jst.jee.server:Servlets"/>
+    <list key="modules" value0="Servlets::org.eclipse.jst.jee.server:Servlets::jst.web::3.1"/>
+  </server>
 </servers>

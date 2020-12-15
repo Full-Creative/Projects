@@ -7,3 +7,8 @@ Nov 18, 2020 14:13:42.675 [8976:6164:1118/141342.674:ERROR:connection_factory_im
 Nov 18, 2020 14:14:08.290 [8976:6164:1118/141408.289:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
 Nov 18, 2020 18:22:18.257 [8976:6164:1118/182218.256:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
 Nov 18, 2020 18:23:12.747 [8976:6164:1118/182312.746:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -7
+
+Dec 14, 2020 15:04:00.290 NEW SESSION
+Dec 14, 2020 15:04:00.291 [5720:1468:1214/150400.288:ERROR:device_event_log_impl.cc(211)] [15:04:00.288] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 14, 2020 15:04:00.326 [5720:1468:1214/150400.288:ERROR:device_event_log_impl.cc(211)] [15:04:00.289] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 14, 2020 15:13:52.677 [1214/151352.676:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
