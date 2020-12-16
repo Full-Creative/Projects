@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
 import com.google.appengine.api.datastore.EntityNotFoundException;
+
+import datastore.DataBaseException;
 import model.Event;
 import model.ParticipantDetails;
 import service.event.EventServiceImp;
@@ -8,74 +10,54 @@ import service.event.EventServiceImp;
 public class EventServiceTest {
 	public EventServiceImp eventService = new EventServiceImp();
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testAddEvent() {
 		Event eventDetails = new Event();
 		eventDetails.setEventTime(0);
-		try {
-			assertEquals(eventDetails, eventService.addEvent(eventDetails));
-		} catch (Exception e) {
-			assertEquals("Exception message must be correct", "Event Details not available", e.getMessage());
-		}
+		eventService.addEvent(eventDetails);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testAddEvent1() {
 		Event eventDetails = new Event();
 		eventDetails.setEventDuration(0);
-		try {
-			assertEquals(eventDetails, eventService.addEvent(eventDetails));
-		} catch (Exception e) {
-			assertEquals("Exception message must be correct", "Event Details not available", e.getMessage());
-		}
+		assertEquals(eventDetails, eventService.addEvent(eventDetails));
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testAddEvent2() {
 		Event eventDetails = new Event();
 		eventDetails.setEventID(-1);
-		try {
-			assertEquals(eventDetails, eventService.addEvent(eventDetails));
-		} catch (Exception e) {
-			assertEquals("Exception message must be correct", "Event Details not available", e.getMessage());
-		}
+		assertEquals(eventDetails, eventService.addEvent(eventDetails));
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testAddEvent3() {
-		try {
-			assertEquals(null, eventService.addEvent(null));
-		} catch (Exception e) {
-			assertEquals("Exception message must be correct", "Event Details not available", e.getMessage());
-		}
-	}
-
-	@Test
-	public void testAddEvent4() {
-		try {
-			assertEquals(null, eventService.addEvent(null));
-		} catch (Exception e) {
-			assertNotEquals("Exception message must be correct", "Event Details available", e.getMessage());
-		}
+		assertEquals(null, eventService.addEvent(null));
 	}
 
 	@Test
 	public void testModifyEvent() {
-		Event eventDetails = new Event();
-		eventDetails.setEventID(-1);
 		try {
+			Event eventDetails = new Event();
+			eventDetails.setEventID(-1);
 			assertEquals(eventDetails, eventService.modifyEvent(eventDetails));
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
 			assertEquals("Exception message must be correct", "Invalid ID", e.getMessage());
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (DataBaseException e) {
+			assertEquals("Exception message must be correct", "Not modified", e.getMessage());
 		}
 	}
 
-	@Test
 	public void testRemoveEvent() {
 		try {
 			eventService.removeEvent(-1);
-		} catch (Exception e) {
-			assertEquals("Exception message must be correct", "Invalid ID", e.getMessage());
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (IllegalArgumentException e) {
+			assertEquals("Exception message must be correct", "Event not available", e.getMessage());
 		}
 	}
 
@@ -83,10 +65,12 @@ public class EventServiceTest {
 	public void testRetrieveById() {
 		try {
 			assertEquals(new Event(), eventService.retrieveById(-1));
-			fail("Should have thrown an exception");
-		} catch (Exception e) {
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (IllegalArgumentException e) {
 			assertEquals("Exception message must be correct", "Invalid ID", e.getMessage());
 		}
+
 	}
 
 	@Test
@@ -95,8 +79,10 @@ public class EventServiceTest {
 		participant.setEmail(null);
 		try {
 			assertEquals(participant, eventService.addParticipant(participant));
-		} catch (Exception e) {
-			assertEquals("Participant Details not available", e.getMessage());
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (IllegalArgumentException e) {
+			assertEquals("Exception message must be correct", "Participant Details not available", e.getMessage());
 		}
 
 	}
@@ -107,36 +93,35 @@ public class EventServiceTest {
 		participant.setName(null);
 		try {
 			assertEquals(participant, eventService.addParticipant(participant));
-		} catch (Exception e) {
-			assertEquals("Participant Details not available", e.getMessage());
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (IllegalArgumentException e) {
+			assertEquals("Exception message must be correct", "Participant Details not available", e.getMessage());
 		}
+
 	}
 
 	@Test
 	public void testAddParticipant2() {
 		try {
 			assertEquals(null, eventService.addParticipant(null));
-		} catch (Exception e) {
-			assertEquals("Participant Details not available", e.getMessage());
+		} catch (EntityNotFoundException e) {
+			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
+		} catch (IllegalArgumentException e) {
+			assertEquals("Exception message must be correct", "Participant Details not available", e.getMessage());
 		}
+
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testRetrieveByTimeRange() {
-		try {
-			assertEquals(null, eventService.retrieveByTimeRange(-1, 0));
-		} catch (Exception e) {
-			assertEquals("Invalid input", e.getMessage());
-		}
+		assertEquals(null, eventService.retrieveByTimeRange(-1, 0));
+
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void testRetrieveByTimeRange1() {
-		try {
 			assertEquals(null, eventService.retrieveByTimeRange(0, -1));
-		} catch (Exception e) {
-			assertEquals("Invalid input", e.getMessage());
-		}
 	}
 
 }

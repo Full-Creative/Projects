@@ -31,8 +31,7 @@ public class ParticipantAddition extends HttpServlet {
 		try {
 			eventService.addParticipant(participant);
 		} catch (EntityNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Event not available");
 		}
 	//	doGet(request, response);
 	}

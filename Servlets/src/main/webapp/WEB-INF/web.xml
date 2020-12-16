@@ -41,4 +41,19 @@
 		<param-name>AlbumName</param-name>
 		<param-value>LatestAlbum</param-value>
 	</context-param>
+
+
+	<filter>
+		<filter-name>f1</filter-name>
+		<filter-class>MyFilter</filter-class>
+		<init-param>
+			<param-name>construction</param-name>
+			<param-value>yes</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>f1</filter-name>
+		<url-pattern>/album</url-pattern>
+	</filter-mapping>
+
 </web-app>

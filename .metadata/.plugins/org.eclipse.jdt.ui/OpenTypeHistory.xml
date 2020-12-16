@@ -4,5 +4,6 @@
     <typeInfo handle="=ReadTimeCalculator/src\/main\/java&lt;com.readtime{ReadTime.java[ReadTime" modifiers="513" timestamp="1605177302703"/>
     <typeInfo handle="=ScheduledEvents/src&lt;generator{DataGenerator.java[DataGenerator" modifiers="1" timestamp="1607336566607"/>
     <typeInfo handle="=ScheduledEvents/src&lt;controller{EventServiceImp.java[EventServiceImp" modifiers="1" timestamp="1607321637925"/>
-    <typeInfo handle="=EventScheduler/src\/main\/java&lt;{ScheduleEvent.java[ScheduleEvent" modifiers="1" timestamp="1607943231884"/>
+    <typeInfo handle="=EventScheduler/src\/main\/java&lt;{ScheduleEvent.java[ScheduleEvent" modifiers="1" timestamp="1608037335029"/>
+    <typeInfo handle="=EventScheduler/src\/main\/java&lt;service.event{EventServiceImp.java[EventServiceImp" modifiers="1" timestamp="1608024841154"/>
 </typeInfoHistroy>

@@ -68,11 +68,9 @@ public class ScheduleEvent extends HttpServlet {
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		} catch (DataBaseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (EntityNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Event not found");
 		}
 
 	}

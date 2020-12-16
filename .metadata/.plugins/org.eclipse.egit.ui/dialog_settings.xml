@@ -5,4 +5,20 @@
 		<item value="github.com"/>
 		<item value="bitbucket.org"/>
 	</list>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="200,200"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="678,306"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="D:\Projects\.git">
+			<item value="false"/>
+			<item value="VaishnaviRamabhadran &lt;vaishu2395@gmail.com&gt;"/>
+			<item value="Added test cases"/>
+			<item value="VaishnaviRamabhadran &lt;vaishu2395@gmail.com&gt;"/>
+			<item value="d98d6e12854adfaba5703997104231a33af488de"/>
+			<item value="0"/>
+			<item value="false"/>
+		</list>
+	</section>
 </section>
