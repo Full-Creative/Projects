@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import service.event.EventServiceImp;
+import service.event.EventHelper;
 
 /**
  * Servlet implementation class EventCreatedTime
@@ -16,12 +16,12 @@ import service.event.EventServiceImp;
 public class EventCreatedTime extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	EventServiceImp eventService = new EventServiceImp();
+	EventHelper eventHelper = new EventHelper();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SerializerHelper serializer = new SerializerHelper();
-		String result = serializer.javaObjectToJson(eventService.sortEventCreatedTime());
+		String result = serializer.javaObjectToJson(eventHelper.sortEventCreatedTime());
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(result);

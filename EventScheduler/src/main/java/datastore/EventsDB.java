@@ -19,6 +19,7 @@ import com.google.appengine.api.datastore.FetchOptions;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.PropertyProjection;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.Filter;
 import com.google.appengine.api.datastore.Query.FilterOperator;
@@ -183,12 +184,8 @@ public class EventsDB {
 	public List<Event> retrieveByTimeRange(long start, long end) {
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		Filter greaterThan = new Query.FilterPredicate("EventTime", FilterOperator.GREATER_THAN_OR_EQUAL, start);
-		Filter lessThan=new Query.FilterPredicate("EventTime",FilterOperator.LESS_THAN_OR_EQUAL,end);
+		Filter lessThan = new Query.FilterPredicate("EventTime", FilterOperator.LESS_THAN_OR_EQUAL, end);
 		Query q = new Query("Event").setFilter(greaterThan).setFilter(lessThan);
-
-//		Query query = new Query("Event");
-//		query.addFilter("EventTime", Query.FilterOperator.LESS_THAN_OR_EQUAL, end);
-//		query.addFilter("EventTime", Query.FilterOperator.GREATER_THAN_OR_EQUAL, start);
 		PreparedQuery pq = datastore.prepare(q);
 
 		List<Event> events = new ArrayList<Event>();
@@ -211,22 +208,36 @@ public class EventsDB {
 
 	}
 
-	/*
-	 * public Map<Long, Event> getEvents() { return events; }
-	 * 
-	 * public boolean setEvents(List<Event> events) { // this.events = events; for
-	 * (int i = 0; i < events.size(); i++) {
-	 * this.events.put(events.get(i).getEventID(), events.get(i)); } for (int i = 0;
-	 * i < events.size(); i++) { Key key = KeyFactory.createKey("Event",
-	 * events.get(i).getEventID()); Entity event = new Entity(key);
-	 * event.setProperty("EventID", events.get(i).getEventID());
-	 * event.setProperty("EventTitle", events.get(i).getEventTitle());
-	 * event.setProperty("EventDuration", events.get(i).getEventDuration());
-	 * event.setProperty("EventTime", events.get(i).getEventTime());
-	 * event.setProperty("EventCreatedTime", events.get(i).getEventCreatedTime());
-	 * datastore.put(event); } return true; }
-	 * 
-	 * public boolean removeEvents(List<Integer> id) { for (Integer i : id)
-	 * this.events.remove(i); return true; }
-	 */
+	public List<Event> retrieveByDate(long date) {
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		Filter greaterThan = new Query.FilterPredicate("EventTime", FilterOperator.GREATER_THAN_OR_EQUAL, date);
+		// Filter lessThan=new
+		// Query.FilterPredicate("EventTime",FilterOperator.LESS_THAN_OR_EQUAL,date);
+		Query q = new Query("Event").setFilter(greaterThan);
+
+		PreparedQuery pq = datastore.prepare(q);
+		List<Event> events = new ArrayList<Event>();
+		for (Entity e : pq.asList(FetchOptions.Builder.withDefaults())) {
+			events.add(entityToObject(e));
+		}
+		return events;
+	}
+
+	public List<Event> retrieveEventByEmail(String email) throws EntityNotFoundException {
+		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+		Query q = new Query("Event");
+		q.addProjection(new PropertyProjection("Email", String.class));
+		q.addProjection(new PropertyProjection("EventID",Long.class));
+		
+		PreparedQuery pq = datastore.prepare(q);
+		List<Event> events = new ArrayList<Event>();
+		for (Entity e : pq.asList(FetchOptions.Builder.withDefaults())) {	
+			if(e.getProperty("Email").equals(email)) {
+				events.add(getEvent((long)e.getProperty("EventID")));
+			}
+		}
+		if(events.size() == 0)
+			throw new IllegalArgumentException();
+		return events;
+	}
 }

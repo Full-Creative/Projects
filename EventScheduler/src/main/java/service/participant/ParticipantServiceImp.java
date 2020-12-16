@@ -1,11 +1,14 @@
 package service.participant;
 
+import model.Event;
+
+import java.util.List;
+
 import com.google.appengine.api.datastore.EntityNotFoundException;
 
 import datastore.DataBaseException;
 import datastore.EventsDB;
 import model.ParticipantDetails;
-import service.event.EventServiceImp;
 
 public class ParticipantServiceImp implements ParticipantService {
 	public EventsDB eventDB;
@@ -35,6 +38,10 @@ public class ParticipantServiceImp implements ParticipantService {
 
 	@Override
 	public void removeParticipant(String id) throws EntityNotFoundException {
+	}
+
+	public List<Event> retrieveEvents(String id) throws EntityNotFoundException {
+		return eventDB.retrieveEventByEmail(id);
 	}
 
 }

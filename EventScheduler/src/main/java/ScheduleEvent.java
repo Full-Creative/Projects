@@ -1,10 +1,4 @@
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +8,6 @@ import service.event.EventServiceImp;
 import datastore.DataBaseException;
 import generator.DataGenerator;
 import model.Event;
-import model.ParticipantDetails;
 import com.google.appengine.api.datastore.EntityNotFoundException;
 
 @WebServlet(name = "ScheduleEvent", urlPatterns = { "/event" })

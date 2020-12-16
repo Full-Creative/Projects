@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,19 +11,17 @@ import com.google.appengine.api.datastore.EntityNotFoundException;
 import model.ParticipantDetails;
 import service.event.EventServiceImp;
 
-/**
- * Servlet implementation class ParticipantAddition
- */
-
 @WebServlet(name = "ParticipantAddition", urlPatterns = { "/event/participant" })
 public class ParticipantAddition extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		SerializerHelper serializer = new SerializerHelper();
 		ParticipantDetails participant = serializer.bufferedReaderToParticipantObject(request.getReader());
 		EventServiceImp eventService = new EventServiceImp();
@@ -33,7 +30,7 @@ public class ParticipantAddition extends HttpServlet {
 		} catch (EntityNotFoundException e) {
 			System.out.println("Event not available");
 		}
-	//	doGet(request, response);
+		// doGet(request, response);
 	}
 
 }

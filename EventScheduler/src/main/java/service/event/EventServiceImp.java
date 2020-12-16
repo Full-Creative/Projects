@@ -78,6 +78,9 @@ public class EventServiceImp extends SortHelper implements EventService {
 		return event;
 	}
 
+	
+
+	
 	public List<Event> sortByParticipantCount() {
 		List<Event> events = eventDB.sortByParticipantCount();
 		return events;
