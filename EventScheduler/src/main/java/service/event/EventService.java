@@ -13,8 +13,8 @@ public interface EventService {
 
 	public Event modifyEvent(Event event) throws DataBaseException, EntityNotFoundException;
 
-	public Event retrieveById(long id) throws EntityNotFoundException;
-	
-	public void removeEvent(long id) throws EntityNotFoundException;
+	public Event retrieveById(String id) throws EntityNotFoundException;
+
+	public void removeEvent(String id) throws EntityNotFoundException;
 
 }

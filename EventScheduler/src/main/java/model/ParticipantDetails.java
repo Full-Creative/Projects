@@ -7,7 +7,16 @@ import com.googlecode.objectify.annotation.Id;
 public class ParticipantDetails {
 @Id	private String email;
 	private String name;
-	private long eventId;
+	private String eventID;
+	private String timeZone;
+	public String getTimeZone() {
+		return timeZone;
+	}
+
+	public void setTimeZone(String timezone) {
+		this.timeZone = timezone;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -39,11 +48,11 @@ public class ParticipantDetails {
 		return (this.name.hashCode() + this.email.hashCode());
 	}
 
-	public long getEventId() {
-		return eventId;
+	public String getEventID() {
+		return eventID;
 	}
 
-	public void setEventId(long eventId) {
-		this.eventId = eventId;
+	public void setEventID(String eventId) {
+		this.eventID = eventId;
 	}
 }

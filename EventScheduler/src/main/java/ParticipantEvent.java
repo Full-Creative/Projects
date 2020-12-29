@@ -1,5 +1,7 @@
 
 import java.io.IOException;
+import java.text.ParseException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,7 @@ public class ParticipantEvent extends HttpServlet {
 		SerializerHelper serializer = new SerializerHelper();
 		String result;
 		try {
-			result = serializer.javaObjectToJson(participantService.retrieveEvents(request.getParameter("id")));
+			result = serializer.javaObjectToJson(participantService.retrieveEvents(request.getParameter("email")));
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(result);
@@ -32,6 +34,9 @@ public class ParticipantEvent extends HttpServlet {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
 			response.getWriter().print("Event not found");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

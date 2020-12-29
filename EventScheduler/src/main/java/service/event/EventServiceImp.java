@@ -8,9 +8,11 @@ import datastore.DataBaseException;
 import datastore.EventsDB;
 import model.Event;
 import model.ParticipantDetails;
+
+import java.text.ParseException;
 import java.util.*;
 
-public class EventServiceImp extends SortHelper implements EventService {
+public class EventServiceImp  implements EventService {
 	public EventsDB eventDB;
 
 	public EventServiceImp() {
@@ -19,7 +21,7 @@ public class EventServiceImp extends SortHelper implements EventService {
 
 	@Override
 	public Event addEvent(Event eventDetails) {
-		if (eventDetails == null || eventDetails.getEventID() == 0 || eventDetails.getEventTime() == 0
+		if (eventDetails == null || eventDetails.getEventTime() == 0
 				|| eventDetails.getEventDuration() == 0)
 			throw new IllegalArgumentException("Event Details not available");
 		boolean isInserted = false;
@@ -45,16 +47,16 @@ public class EventServiceImp extends SortHelper implements EventService {
 	}
 
 	@Override
-	public void removeEvent(long id) throws EntityNotFoundException {
+	public void removeEvent(String id) throws EntityNotFoundException {
 		if (retrieveById(id) == null)
 			throw new IllegalArgumentException("Event not available");
 		eventDB.deleteEvent(id);
 	}
 
 	public ParticipantDetails addParticipant(ParticipantDetails participant) throws EntityNotFoundException {
-		if (participant == null || participant.getEmail() == null || participant.getName() == null)
+		if (participant == null || participant.getEmail() == null)
 			throw new IllegalArgumentException("Participant Details not available");
-		if (retrieveById(participant.getEventId()) == null || participant.getEventId() < 0)
+		if (retrieveById(participant.getEventID()) == null || participant.getEventID() == null)
 			throw new IllegalArgumentException("No such event");
 		boolean isInserted = false;
 		try {
@@ -69,8 +71,8 @@ public class EventServiceImp extends SortHelper implements EventService {
 	}
 
 	@Override
-	public Event retrieveById(long id) throws EntityNotFoundException {
-		if (id < 0)
+	public Event retrieveById(String id) throws EntityNotFoundException {
+		if (id == null)
 			throw new IllegalArgumentException("Invalid ID");
 		Event event = eventDB.getEvent(id);
 		if (event == null)
@@ -81,8 +83,8 @@ public class EventServiceImp extends SortHelper implements EventService {
 	
 
 	
-	public List<Event> sortByParticipantCount() {
-		List<Event> events = eventDB.sortByParticipantCount();
+	public List<Event> retrieveByDatesortByParticipantCount(String date) throws ParseException {
+		List<Event> events = eventDB.retrieveByDatesortByParticipantCount(date);
 		return events;
 	}
 

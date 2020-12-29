@@ -2,6 +2,7 @@ package service.participant;
 
 import model.Event;
 
+import java.text.ParseException;
 import java.util.List;
 
 import com.google.appengine.api.datastore.EntityNotFoundException;
@@ -28,7 +29,13 @@ public class ParticipantServiceImp implements ParticipantService {
 	@Override
 	public ParticipantDetails modifyParticipant(ParticipantDetails participant)
 			throws DataBaseException, EntityNotFoundException {
-		return null;
+		if (participant.getEmail() == null)
+			throw new IllegalArgumentException("Participant not available");
+		boolean modified = false;
+		modified = eventDB.updateParticipant(participant);
+		if (!modified)
+			throw new DataBaseException("Not modified");
+		return participant;
 	}
 
 	@Override
@@ -38,9 +45,10 @@ public class ParticipantServiceImp implements ParticipantService {
 
 	@Override
 	public void removeParticipant(String id) throws EntityNotFoundException {
+		eventDB.removeParticipant(id);
 	}
 
-	public List<Event> retrieveEvents(String id) throws EntityNotFoundException {
+	public List<Event> retrieveEvents(String id) throws EntityNotFoundException, ParseException {
 		return eventDB.retrieveEventByEmail(id);
 	}
 

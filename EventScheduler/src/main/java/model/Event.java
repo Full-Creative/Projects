@@ -7,12 +7,12 @@ import com.googlecode.objectify.annotation.Id;
 
 @Entity
 public class Event {
-	@Id private long eventID;
+	@Id private String eventID;
 	private String eventTitle;
 	private long eventTime;
 	private long eventCreatedTime;
 	private long eventDuration;
-	private Set<String> participantEmail;
+	private Set<String> participantKey;
 	//private Set<ParticipantDetails> participants;
 
 	public long getEventTime() {
@@ -40,14 +40,14 @@ public class Event {
 	}
 
 	public Set<String> getParticipantEmail() {
-		return participantEmail;
+		return participantKey;
 	}
 
 	public void setParticipantEmail(Set<String> email) {
-		if (this.participantEmail != null)
-			this.participantEmail.addAll(email);
+		if (this.participantKey != null)
+			this.participantKey.addAll(email);
 		else
-			this.participantEmail = email;
+			this.participantKey = email;
 	}
 
 	public String getEventTitle() {
@@ -58,11 +58,11 @@ public class Event {
 		this.eventTitle = eventTitle;
 	}
 
-	public long getEventID() {
+	public String getEventID() {
 		return eventID;
 	}
 
-	public void setEventID(long eventID) {
+	public void setEventID(String eventID) {
 		this.eventID = eventID;
 	}
 
@@ -73,12 +73,12 @@ public class Event {
 		result = prime * result + (int) (eventCreatedTime ^ (eventCreatedTime >>> 32));
 		result = prime * result + (int) (eventDuration ^ (eventDuration >>> 32));
 		
-		result = prime * result + (int)eventID;
+	//	result = prime * result + (int)eventID;
 		//System.out.println( eventID);
 		
 		result = prime * result + (int) (eventTime ^ (eventTime >>> 32));
 		result = prime * result + ((eventTitle == null) ? 0 : eventTitle.hashCode());
-		result = prime * result + ((participantEmail == null) ? 0 : participantEmail.hashCode());
+		result = prime * result + ((participantKey == null) ? 0 : participantKey.hashCode());
 		
 		return result;
 	}
@@ -105,10 +105,10 @@ public class Event {
 				return false;
 		} else if (!eventTitle.equals(other.eventTitle))
 			return false;
-		if (participantEmail == null) {
-			if (other.participantEmail != null)
+		if (participantKey == null) {
+			if (other.participantKey != null)
 				return false;
-		} else if (!participantEmail.equals(other.participantEmail))
+		} else if (!participantKey.equals(other.participantKey))
 			return false;
 		return true;
 	}

@@ -27,6 +27,10 @@ public class ParticipantAddition extends HttpServlet {
 		EventServiceImp eventService = new EventServiceImp();
 		try {
 			eventService.addParticipant(participant);
+
+			response.setContentType("text/plain");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().print("Inserted participant");
 		} catch (EntityNotFoundException e) {
 			System.out.println("Event not available");
 		}

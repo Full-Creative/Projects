@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="getServletContext"/>
+		<item key="selection" value="Filter"/>
 		<list key="findhistory">
+			<item value="filter"/>
+			<item value="long"/>
+			<item value="lonh"/>
+			<item value="gene"/>
+			<item value="album"/>
+			<item value="system"/>
 			<item value="getServletContext"/>
 			<item value="init("/>
 			<item value="init"/>
@@ -17,12 +23,6 @@
 			<item value="service"/>
 			<item value="update"/>
 			<item value="event"/>
-			<item value="serial"/>
-			<item value="Integer"/>
-			<item value="time"/>
-			<item value="factory"/>
-			<item value="system"/>
-			<item value="hello"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Long"/>

@@ -14,7 +14,7 @@ public class DataGenerator {
 		long hour = 0;
 		for (int i = 1; i <= numEvents; i++) {
 			Event eventDetails = new Event();
-			eventDetails.setEventID(eventID++);
+			eventDetails.setEventID(String.valueOf(eventID++));
 			eventDetails.setEventTitle("Event" + i);
 			eventDetails.setEventCreatedTime(1414590045000L);
 			eventDetails.setEventDuration(3600000 * (numEvents - i + 1));
@@ -29,7 +29,7 @@ public class DataGenerator {
 
 	public Event generateEvent() {
 		Event event = new Event();
-		event.setEventID(2);
+		event.setEventID("2");
 		event.setEventTime(System.currentTimeMillis());
 		event.setEventTitle("Updated Event");
 		event.setEventDuration(3600000 * 8);

@@ -27,7 +27,7 @@ public class EventServiceTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testAddEvent2() {
 		Event eventDetails = new Event();
-		eventDetails.setEventID(-1);
+		eventDetails.setEventID(null);
 		assertEquals(eventDetails, eventService.addEvent(eventDetails));
 	}
 
@@ -40,7 +40,7 @@ public class EventServiceTest {
 	public void testModifyEvent() {
 		try {
 			Event eventDetails = new Event();
-			eventDetails.setEventID(-1);
+			eventDetails.setEventID(null);
 			assertEquals(eventDetails, eventService.modifyEvent(eventDetails));
 		} catch (IllegalArgumentException e) {
 			assertEquals("Exception message must be correct", "Invalid ID", e.getMessage());
@@ -53,7 +53,7 @@ public class EventServiceTest {
 
 	public void testRemoveEvent() {
 		try {
-			eventService.removeEvent(-1);
+			eventService.removeEvent(null);
 		} catch (EntityNotFoundException e) {
 			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
 		} catch (IllegalArgumentException e) {
@@ -64,7 +64,7 @@ public class EventServiceTest {
 	@Test
 	public void testRetrieveById() {
 		try {
-			assertEquals(new Event(), eventService.retrieveById(-1));
+			assertEquals(new Event(), eventService.retrieveById(null));
 		} catch (EntityNotFoundException e) {
 			assertEquals("Exception message must be correct", "Event not found", e.getMessage());
 		} catch (IllegalArgumentException e) {

@@ -1,5 +1,7 @@
 
 import java.io.IOException;
+import java.text.ParseException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +22,18 @@ public class ParticipantCount extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SerializerHelper serializer = new SerializerHelper();
-		String result = serializer.javaObjectToJson(eventService.sortByParticipantCount());
-		response.setContentType("application/json");
-		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(result);
-}
+		String result;
+		try {
+			result = serializer
+					.javaObjectToJson(eventService.retrieveByDatesortByParticipantCount(request.getParameter("date")));
+
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().print(result);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

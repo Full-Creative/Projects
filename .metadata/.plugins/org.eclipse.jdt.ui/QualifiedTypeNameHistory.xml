@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Model.EventDetails"/>
-    <fullyQualifiedTypeName name="Controller.EventController"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
-    <fullyQualifiedTypeName name="data.Events"/>
-    <fullyQualifiedTypeName name="junit.framework.Assert"/>
-    <fullyQualifiedTypeName name="org.junit.Assert"/>
-    <fullyQualifiedTypeName name="generator.SortHelper"/>
-    <fullyQualifiedTypeName name="data.EventsDB"/>
-    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException"/>
-    <fullyQualifiedTypeName name="controller.EventControllerImpl"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="generator.DataGenerator"/>
     <fullyQualifiedTypeName name="org.graalvm.compiler.debug.Assertions"/>
     <fullyQualifiedTypeName name="controller.EventServiceImp"/>
     <fullyQualifiedTypeName name="datastore.DataBaseException"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.google.cloud.datastore.KeyFactory"/>
     <fullyQualifiedTypeName name="com.google.cloud.datastore.Entity"/>
     <fullyQualifiedTypeName name="com.google.cloud.datastore.StructuredQuery.OrderBy"/>
@@ -36,7 +21,6 @@
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="datastore.EventsDB"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletContextListener"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletContextEvent"/>
     <fullyQualifiedTypeName name="com.googlecode.objectify.ObjectifyService"/>
@@ -50,7 +34,6 @@
     <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Query.SortDirection"/>
     <fullyQualifiedTypeName name="com.google.appengine.api.datastore.PreparedQuery"/>
     <fullyQualifiedTypeName name="com.google.appengine.api.datastore.FetchOptions"/>
-    <fullyQualifiedTypeName name="com.google.appengine.api.datastore.FetchOptions.Builder"/>
     <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Query.FilterOperator"/>
     <fullyQualifiedTypeName name="com.google.datastore.v1.Filter"/>
     <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Query.Filter"/>
@@ -60,4 +43,21 @@
     <fullyQualifiedTypeName name="org.junit.Before"/>
     <fullyQualifiedTypeName name="model.Event"/>
     <fullyQualifiedTypeName name="model.ParticipantDetails"/>
+    <fullyQualifiedTypeName name="com.google.appengine.api.datastore.PropertyProjection"/>
+    <fullyQualifiedTypeName name="service.participant.ParticipantServiceImp"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Query.CompositeFilterOperator"/>
+    <fullyQualifiedTypeName name="com.fasterxml.uuid.UUIDClock"/>
+    <fullyQualifiedTypeName name="com.fasterxml.uuid.Generators"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="java.util.Enumeration"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="java.util.TimeZone"/>
+    <fullyQualifiedTypeName name="com.google.appengine.api.datastore.FetchOptions.Builder"/>
 </qualifiedTypeNameHistroy>

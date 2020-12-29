@@ -1,5 +1,6 @@
 package service.event;
 
+import java.text.ParseException;
 import java.util.List;
 
 import datastore.EventsDB;
@@ -11,11 +12,6 @@ public class EventHelper {
 
 	public EventHelper() {
 		eventDB = new EventsDB();
-	}
-
-	public List<Event> sortByParticipantCount() {
-		List<Event> events = eventDB.sortByParticipantCount();
-		return events;
 	}
 
 	public List<Event> sortDuration() {
@@ -36,8 +32,8 @@ public class EventHelper {
 		return eventDB.retrieveByTimeRange(start, end);
 	}
 
-	public List<Event> retrieveByDate(long date) {
-		if (date < 0)
+	public List<Event> retrieveByDate(String date) throws ParseException {
+		if (date == null)
 			throw new IllegalArgumentException("Invalid input");
 		return eventDB.retrieveByDate(date);
 	}

@@ -15,7 +15,7 @@ public class TimeRange extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SerializerHelper serializer = new SerializerHelper();
-		String result = serializer.javaObjectToJson(eventHelper.retrieveByTimeRange(1414560045000L, 1414580045000L));
+		String result = serializer.javaObjectToJson(eventHelper.retrieveByTimeRange(Long.valueOf(request.getParameter("start")),Long.valueOf(request.getParameter("end"))));		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().print(result);
