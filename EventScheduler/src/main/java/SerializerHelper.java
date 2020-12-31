@@ -19,7 +19,7 @@ public class SerializerHelper {
 		return buffer.toString();
 	}
 
-	protected Event bufferedReaderToJavaObject(BufferedReader reader) throws IOException {
+	protected Event bufferedReaderToJavaObject(BufferedReader reader) throws IOException,NumberFormatException {
 		String javaString = bufferedReaderToString(reader);
 		Event data = new Gson().fromJson(javaString, Event.class);
 		return data;

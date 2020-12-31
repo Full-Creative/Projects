@@ -17,17 +17,15 @@ import com.google.appengine.api.datastore.EntityNotFoundException;
 public class ScheduleEvent extends HttpServlet {
 	Event eventDetails = new Event();
 	EventServiceImp eventService = new EventServiceImp();
-	
+
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		SerializerHelper serializer = new SerializerHelper();
 		try {
 
-			String result = serializer
-					.javaObjectToJson(eventService.retrieveById((request.getParameter("id"))));
+			String result = serializer.javaObjectToJson(eventService.retrieveById((request.getParameter("id"))));
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
-			
 
 			response.getWriter().print(result);
 
@@ -38,7 +36,7 @@ public class ScheduleEvent extends HttpServlet {
 	}
 
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, NumberFormatException {
 		SerializerHelper serializer = new SerializerHelper();
 		try {
 			Event event = (Event) serializer.bufferedReaderToJavaObject(request.getReader());
@@ -48,8 +46,9 @@ public class ScheduleEvent extends HttpServlet {
 			response.getWriter().print("Inserted event");
 
 		} catch (IllegalArgumentException e) {
+			response.getWriter().print(e.getMessage());
 			System.out.println(e.getMessage());
-		} 
+		}
 	}
 
 	@Override

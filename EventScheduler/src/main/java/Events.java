@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,20 +14,20 @@ import service.event.EventServiceImp;
 /**
  * Servlet implementation class Events
  */
-@WebServlet("/Events")
+@WebServlet("/events")
 public class Events extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Event eventDetails = new Event();
 	EventServiceImp eventService = new EventServiceImp();
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		SerializerHelper serializer = new SerializerHelper();
 
-			String result = serializer
-					.javaObjectToJson(eventService.sortEventCreatedTime());
-			response.setContentType("application/json");
-			response.setCharacterEncoding("UTF-8");
-			response.getWriter().print(result);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		SerializerHelper serializer = new SerializerHelper();
+		String result = serializer.javaObjectToJson(eventService.sortEventCreatedTime());
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(result);
 
 	}
 
