@@ -12,3 +12,11 @@ Dec 14, 2020 15:04:00.290 NEW SESSION
 Dec 14, 2020 15:04:00.291 [5720:1468:1214/150400.288:ERROR:device_event_log_impl.cc(211)] [15:04:00.288] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Dec 14, 2020 15:04:00.326 [5720:1468:1214/150400.288:ERROR:device_event_log_impl.cc(211)] [15:04:00.289] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
 Dec 14, 2020 15:13:52.677 [1214/151352.676:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+
+Dec 31, 2020 11:10:29.632 NEW SESSION
+Dec 31, 2020 11:10:29.632 [12920:17144:1231/111029.629:ERROR:device_event_log_impl.cc(211)] [11:10:29.629] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 31, 2020 11:10:29.652 [12920:17144:1231/111029.629:ERROR:device_event_log_impl.cc(211)] [11:10:29.629] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 31, 2020 11:16:57.949 [7716:6844:1231/111657.949:ERROR:device_event_log_impl.cc(211)] [11:16:57.949] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 31, 2020 11:16:57.951 [7716:6844:1231/111657.950:ERROR:device_event_log_impl.cc(211)] [11:16:57.950] USB: usb_device_handle_win.cc:1020 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Dec 31, 2020 11:24:39.425 [7716:6844:1231/112439.424:ERROR:CONSOLE(0)] "The source list for Content Security Policy directive 'font-src' contains an invalid source: 'https://chrome-extension://'. It will be ignored.", source: https://www.setmore.com/ (0)
+Dec 31, 2020 11:26:45.400 [1231/112645.399:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

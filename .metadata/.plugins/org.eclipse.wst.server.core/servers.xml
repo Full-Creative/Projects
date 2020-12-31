@@ -16,4 +16,16 @@
     <list key="app-engine-server-modules-list" value0="org.eclipse.jst.jee.server:Servlets"/>
     <list key="modules" value0="Servlets::org.eclipse.jst.jee.server:Servlets::jst.web::3.1"/>
   </server>
+  <server auto-publish-setting="2" auto-publish-time="0" hostname="localhost" id="App Engine Standard at localhost (5)" name="App Engine Standard at localhost (5)" runtime-id="App Engine Standard Runtime" server-type="com.google.cloud.tools.eclipse.appengine.standard.server" server-type-id="com.google.cloud.tools.eclipse.appengine.standard.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="app-engine-server-modules-list"/>
+    <list key="modules"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="0" hostname="localhost" id="App Engine Standard at localhost (6)" name="App Engine Standard at localhost (6)" runtime-id="App Engine Standard Runtime" server-type="com.google.cloud.tools.eclipse.appengine.standard.server" server-type-id="com.google.cloud.tools.eclipse.appengine.standard.server" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="app-engine-server-modules-list"/>
+    <list key="modules"/>
+  </server>
+  <server auto-publish-setting="2" auto-publish-time="0" hostname="localhost" id="App Engine Standard at localhost (7)" name="App Engine Standard at localhost (7)" runtime-id="App Engine Standard Runtime" server-type="com.google.cloud.tools.eclipse.appengine.standard.server" server-type-id="com.google.cloud.tools.eclipse.appengine.standard.server" start-timeout="240" stop-timeout="240" timestamp="0">
+    <list key="app-engine-server-modules-list" value0="org.eclipse.jst.jee.server:EventSchedule"/>
+    <list key="modules" value0="EventSchedule::org.eclipse.jst.jee.server:EventSchedule::jst.web::3.1"/>
+  </server>
 </servers>
