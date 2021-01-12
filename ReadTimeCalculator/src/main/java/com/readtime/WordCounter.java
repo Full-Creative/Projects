@@ -11,8 +11,6 @@ public class WordCounter implements Tokenizer {
 			} else {
 				count = data.split("\\W+").length;
 			}
-		} catch (NullPointerException e) {
-			System.out.println("NullPointerException..");
 		} catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}

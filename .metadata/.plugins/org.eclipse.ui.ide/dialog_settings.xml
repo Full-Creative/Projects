@@ -6,6 +6,12 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Projects\ShapesProject"/>
+			<item value="D:\EventScheduler\EventScheduler"/>
+			<item value="D:\Clone\Projects\EventScheduler"/>
+			<item value="D:\EventSchedule\EventScheduler"/>
+			<item value="D:\EventSchedule\src"/>
+			<item value="D:\EventSchedule"/>
 			<item value="C:\Users\User.DESKTOP-SAM078B\Downloads\workspace\Test"/>
 			<item value="C:\Users\User.DESKTOP-SAM078B\Downloads\workspace\ShapesProject"/>
 			<item value="C:\Users\User.DESKTOP-SAM078B\Downloads\workspace\AccessMoifiers\src\package1"/>
@@ -22,7 +28,7 @@
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.google.cloud.tools.eclipse.appengine.newproject.AppEngineStandard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="com.google.cloud.tools.eclipse.wizards"/>
 		</list>
@@ -40,5 +46,8 @@
 			<item key="DIALOG_Y_ORIGIN" value="39"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="D:\ScheduleEvents"/>
 	</section>
 </section>

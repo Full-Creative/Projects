@@ -23,11 +23,19 @@ import com.fasterxml.uuid.*;
 
 public class WorkAround extends abstractClass {
 	public static void main(String[] args) {
-		int i;
-		for( i=1; i>0;){
-		System.out.println("hello");
+	
+		String s="akash,akash@gmail.com,19843;akshay,akshay@gmail.com,34819";
+		String[] name = null;
+		String[] ar=s.split(",|;");
+		for(int i=0;i<ar.length;i=i+3) {
+			if(ar[i].contains("ak"))
+				System.out.println(ar[i]);
 		}
-System.out.println(i);
+//		for(String str :ar)
+//		{
+//			System.out.println(str);
+//		}
+		
 		/*
 		 * Date d = new Date(System.currentTimeMillis()); Calendar cal =
 		 * Calendar.getInstance(); cal.setTimeInMillis(1608548671734L);
@@ -46,8 +54,6 @@ System.out.println(i);
 		 * System.out.println(cal.getTime());
 		 */
 
-		UUID uuid = Generators.timeBasedGenerator().generate();
-		System.out.print(uuid);
 
 		/*
 		 * List<Integer> a=new ArrayList<Integer>(); a.add(1); // a.add("Hello");

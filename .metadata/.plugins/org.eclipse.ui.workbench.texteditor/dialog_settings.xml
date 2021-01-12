@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Filter"/>
+		<item key="selection" value="ajaxCalls"/>
 		<list key="findhistory">
-			<item value="filter"/>
-			<item value="long"/>
-			<item value="lonh"/>
-			<item value="gene"/>
-			<item value="album"/>
-			<item value="system"/>
-			<item value="getServletContext"/>
-			<item value="init("/>
-			<item value="init"/>
-			<item value="Invalid ID"/>
-			<item value="getservlet"/>
-			<item value="service("/>
-			<item value="service"/>
+			<item value="ajaxCalls"/>
+			<item value="getEvents"/>
+			<item value="addEvent"/>
+			<item value="enter"/>
+			<item value="style"/>
+			<item value="updateEvent"/>
 			<item value="update"/>
-			<item value="event"/>
+			<item value="getEvents("/>
+			<item value="getEvent"/>
+			<item value="submit"/>
+			<item value="submite"/>
+			<item value="console"/>
+			<item value="erro"/>
+			<item value="error"/>
+			<item value="display"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Long"/>
@@ -32,8 +32,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="968"/>
-		<item key="DIALOG_Y_ORIGIN" value="205"/>
+		<item key="DIALOG_X_ORIGIN" value="814"/>
+		<item key="DIALOG_Y_ORIGIN" value="345"/>
 		<item key="DIALOG_WIDTH" value="284"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
