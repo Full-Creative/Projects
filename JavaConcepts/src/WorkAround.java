@@ -23,7 +23,7 @@ import com.fasterxml.uuid.*;
 
 public class WorkAround extends abstractClass {
 	public static void main(String[] args) {
-	//Contact project snippet
+	//New comment to test git
 		String s="akash,akash@gmail.com,19843;akshay,akshay@gmail.com,34819";
 		String[] name = null;
 		String[] ar=s.split(",|;");
